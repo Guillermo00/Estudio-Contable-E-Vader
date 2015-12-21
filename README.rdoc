@@ -1,28 +1,23 @@
-== README
+== Sistema E-Vader
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Trabajo Integrador | TTPS opción Ruby
 
-Things you may want to cover:
+Para poner en funcionamiento el sistema contable,
+una vez descargado el codigo usted debera abrir una terminal en el mismo directorio y ejectuar:
 
-* Ruby version
+Debe migrar la base de datos..
 
-* System dependencies
+ * <tt> bin/rake db:migrate RAILS_ENV=development </tt>
 
-* Configuration
+Debe cargar el set de datos iniciales ..
 
-* Database creation
+ * <tt> rake db:seed </tt>
 
-* Database initialization
+Debe poner a correr el servidor..
+ * <tt> rails s </tt>
 
-* How to run the test suite
+y ya podra acceder al sistema web  en: 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ * <tt> http://localhost:3000 </tt>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
