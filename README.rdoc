@@ -7,17 +7,36 @@ una vez descargado el codigo usted debera abrir una terminal en el mismo directo
 
 Debe migrar la base de datos..
 
- * <tt> bin/rake db:migrate RAILS_ENV=development </tt>
+ * rake db:migrate 
 
 Debe cargar el set de datos iniciales ..
 
- * <tt> rake db:seed </tt>
+ * rake db:seed 
 
 Debe poner a correr el servidor..
- * <tt> rails s </tt>
+ * rails s 
 
 y ya podra acceder al sistema web  en: 
 
- * <tt> http://localhost:3000 </tt>
+ * http://localhost:3000 
 
 
+------------------------------------------------------------------
+
+Datos a tener en cuenta del sistema:
+
+	- Tanto los clientes como las personas solo podran eliminarse si no tienen facturas emitidas 
+	  en el set de datos iniciales,  ya se encuentran dos registros cargados de cada uno llamados "eliminame"
+	  que no poseen facturas emitidas, con lo cual deberian eliminarse sin problemas. Los otros registros ya poseen
+	  facturacion asociada , con lo cual no podran eliminarse.
+
+	- La facturacion del sistema funciona basicamente :
+		1) Accediendo a un cliente ya registrado (Solapa clientes --> "Mostrar") 
+		2) Aqui se mostraran los datos propios del cliente, un formulario para agregar una facturacion, y un listado de todas las facturas que haya emitido este mismo cliente.
+		3)Para Agregar una facturacion debe completar dicho formulario (tenga en cuenta que si necesita emitir una factura a una Persona/Entidad nueva, debe agregarla previamente, podra observar un boton que lo lleva al alta de esta misma, sino podra dirigirse a la solapa Entidades y alli agregar una nueva)
+
+
+
+Pose Guillermo  - N° Alumno: 10976/0 
+
+Taller de Ruby 2015  UNLP

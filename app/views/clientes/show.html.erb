@@ -83,7 +83,7 @@
             Personas a las que mas facturo: <br>
 
               <% @cliente.mas_facturado.each do |x| %>
-              * <%= x[0] %> ---> <%= x[1] %><br>
+              * <%= x[0] %>:$<%= x[1] %><br>
               <% end%>
         </h3>
    <% else %>
