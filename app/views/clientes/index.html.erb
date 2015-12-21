@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nuestros Clientes</h1>
+<div id="bot">
+  <%= link_to 'Crear Cliente', new_cliente_path %>
+
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Nacimiento</th>
+      <th>Genero</th>
+      <th>Dni</th>
+      <th>Cuil cuit</th>
+      <th>Telefono</th>
+      <th>Email</th>
+      <th>Direccion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.nombre %></td>
+        <td><%= cliente.apellido %></td>
+        <td><%= cliente.nacimiento %></td>
+        <td><%= cliente.genero %></td>
+        <td><%= cliente.dni %></td>
+        <td><%= cliente.cuil_cuit %></td>
+        <td><%= cliente.telefono %></td>
+        <td><%= cliente.email %></td>
+        <td><%= cliente.direccion %></td>
+        <td><%= link_to 'Mostrar', cliente %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

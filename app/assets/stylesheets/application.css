@@ -1,0 +1,227 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* Aca empieza el reset*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, textarea, input,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	color: inherit;
+	vertical-align: baseline;
+	outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img {
+	display: block;
+}
+
+body {line-height: 1;}
+
+ol, ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {text-decoration:none;}
+/*  -----------------------Aca termino el reset!  ---------*/ 
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #DDD;
+	padding-left: 15px;
+
+	width: 85%;
+	margin: 0 auto;
+	padding-top: 70px;
+	position: relative;
+}
+
+
+
+table {
+	width: 100%;
+}
+
+table th,
+table td {
+	padding: 8px;
+	vertical-align: middle;
+}
+
+table > thead {
+	color: #FFF;
+	font-weight: 500;
+	background-color: #363636;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border: 1px solid #2C2C2C;
+}
+
+table > tbody > tr > td {
+	border: 1px solid #DDD;
+}
+
+table > tbody > tr:nth-child(odd) > td {
+	background-color: #F9F9F9;
+}
+
+
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: grey;
+    margin-top: 200px;
+}
+
+/* */
+
+fieldset{
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	display:block;
+	border-radius:8px; 
+	padding-bottom: 10px;
+	background-color: #363636;
+	border-style: none;
+	padding: 15px;
+}
+fieldset p{
+	font-weight:600;
+	display: inline-block;
+	margin-left: 20px;
+	margin-top: 10px;
+	color: #FFF;
+	width: 30%;
+}
+
+h1{
+	color: #3FB2EB;
+	margin:15px;
+	font-size: 2em;
+	margin-left: 0px;
+}
+h3{
+	color: #3FB2EB;
+	margin:15px;
+	text-align: center;
+	font-size: 1em;
+}
+
+input[type="submit"]{
+	margin-bottom: 20px;
+	margin: 20px;
+	width:120px;
+	height: 40px;
+	outline: none;
+	border:0px;
+	background-color: #3FB2EB;
+	color: white;
+	font-size: 0.8em;
+	border-radius: 4px;
+	font-weight: bold;
+	margin-left: 20px;
+	padding-left: 5px;
+}
+#bot {
+text-align: right;
+margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width:100%;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.titu{
+	color:#333;
+	text-align: center;
+	font-size: 2.4em;
+
+}
+nav{
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+
+.nuevo{
+	background-color: #C1C1C1;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.nuevo div {
+	display: inline-block;
+	width:45%;
+}
+.nuevo a , #bot a{
+		margin-bottom: 20px;
+	margin: 20px;
+	width:220px;
+	height: 40px;
+	outline: none;
+	border:0px;
+	background-color: #3FB2EB;
+	color: white;
+	font-size: 0.9em;
+	border-radius: 4px;
+	font-weight: bold;
+	margin-left: 20px;
+	padding-left: 5px;
+}

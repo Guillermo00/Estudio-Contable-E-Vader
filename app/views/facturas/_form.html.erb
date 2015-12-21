@@ -1,0 +1,39 @@
+<%= form_for([@cliente,@factura]) do |f| %>
+  <% if @factura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factura.errors.count, "error") %> prohibited this factura from being saved:</h2>
+
+      <ul>
+      <% @factura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="nuevo">
+    
+    <div class="field">
+      <%= f.label :persona %>/Entidad:
+      <%= collection_select( :factura, :persona_id, Persona.all, :id,:nombre) %>
+   
+       <%= link_to 'Agregar Entidad', new_persona_path %>
+ </div>
+
+    <div class="field">
+      <%= f.label :monto %> $ : <%= f.text_field :monto %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :emision %>
+      <%= f.date_select :emision %>
+    </div>
+    <div class="field">
+      <%= f.label :descripcion %>
+      <%= f.text_area :descripcion %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>

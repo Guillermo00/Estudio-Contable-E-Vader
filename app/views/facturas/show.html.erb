@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<h1>Factura emitida a: <%= @factura.cliente.nombre %> <%= @factura.cliente.apellido %> </h1>
+
+<div id="bot">
+<%= link_to 'Editar', edit_factura_path(@factura) %> | <%= link_to 'Volver', cliente_path %>
+<div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Monto</th>
+      <th>Emision</th>
+      <th>Descripcion</th>
+      <th>Emitida a:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+      <tr>
+
+        <td><%= @factura.cliente.nombre %> <%= @factura.cliente.apellido %></td>   
+        <td><%= @factura.monto %></td>
+        <td><%= @factura.emision %></td>
+        <td><%= @factura.descripcion %></td>
+        <td><%= @factura.persona.nombre %></td>   
+
+      </tr>
+ 
+  </tbody>
+</table>

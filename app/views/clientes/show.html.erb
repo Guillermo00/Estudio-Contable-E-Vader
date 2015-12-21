@@ -1,0 +1,134 @@
+<p id="notice"><%= notice %></p>
+<h1> <%= @cliente.nombre %> <%= @cliente.apellido %> </h1>
+
+<div id="bot"> 
+<%= link_to 'Editar', edit_cliente_path(@cliente) %> | <%= link_to 'Volver', clientes_path %>
+</div>
+
+<fieldset>
+  <p>
+    <strong>Nombre:</strong>
+    <%= @cliente.nombre %>
+  </p>
+
+  <p>
+    <strong>Apellido:</strong>
+    <%= @cliente.apellido %>
+  </p>
+
+  <p>
+    <strong>Nacimiento:</strong>
+    <%= @cliente.nacimiento %>
+  </p>
+
+  <p>
+    <strong>Genero:</strong>
+    <%= @cliente.genero %>
+  </p>
+
+  <p>
+    <strong>Dni:</strong>
+    <%= @cliente.dni %>
+  </p>
+
+  <p>
+    <strong>Cuil cuit:</strong>
+    <%= @cliente.cuil_cuit %>
+  </p>
+
+  <p>
+    <strong>Telefono:</strong>
+    <%= @cliente.telefono %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @cliente.email %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= @cliente.direccion %>
+  </p>
+  <div>
+    <h3>
+      La edad del cliente es : <%= @cliente.edad %> 
+    </h3>
+
+   <% if @cliente.facturas.any? %>
+      <h3>
+        Total de Facturas Emitidas: <%= @cliente.facturas.count %>
+      </h3>
+
+       <h3>
+            Facturacion por año: 
+                <br>
+                <% @cliente.por_anio.each do |x| %>
+                * La facturacion en <%= x[0] %> fue de $:<%= x[1] %><br>
+                <% end%>
+
+        </h3>
+
+        <h3>
+            Cantidad de facturas por mes del corriente año: 
+                <br>
+                <% @meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]%>
+                <% @cliente.por_mes.each do |x| %>
+                * Facturas emitidas el mes <%= @meses[x[0].to_i-1] %> fueron: <%= x[1]%><br>
+                <% end%>
+         
+        </h3>
+
+        <h3>
+            Personas a las que mas facturo: <br>
+
+              <% @cliente.mas_facturado.each do |x| %>
+              * <%= x[0] %> ---> <%= x[1] %><br>
+              <% end%>
+        </h3>
+   <% else %>
+        <h3>
+            (El cliente no posee facturacion)
+        </h3>
+    <% end%> 
+  </div>
+</fieldset>
+
+
+<div class="field">
+  <h3>Ingrese nueva Factura</h3>
+  <%= render "facturas/form"%>
+</div>
+
+
+<h3> Facturas del cliente</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Monto</th>
+      <th>Emision</th>
+      <th>Descripcion</th> 
+      <th>Entidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cliente.facturas.order(:emision).each do |factura| %>
+      <tr>
+        <td>$ <%= factura.monto %></td>
+        <td><%= factura.emision %></td>
+        <td><%= factura.descripcion %></td>
+        <td><%= factura.persona.nombre %></td> 
+        <td><%= link_to 'Ver', factura %></td>
+        <td><%= link_to 'Editar', edit_factura_path(factura) %></td>
+        <td><%= link_to 'Eliminar', factura, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+

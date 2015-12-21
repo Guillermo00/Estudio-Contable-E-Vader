@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entidad: <%= @persona.nombre %></h1>
+
+
+<div id="bot">
+
+<%= link_to 'Editar', edit_persona_path(@persona) %> | <%= link_to 'Volver', personas_path %>
+	
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+  
+      <tr>
+        <td><%= @persona.nombre %></td>   
+        <td><%= @persona.descripcion %></td>
+      </tr>
+ 
+  </tbody>
+</table>
