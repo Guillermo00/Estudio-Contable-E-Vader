@@ -1,5 +1,5 @@
 class Cliente < ActiveRecord::Base
-	has_many :facturas
+	has_many :facturas, dependent: :restrict_with_error
 	
 	validates :nombre,:apellido,:dni,:cuil_cuit,:direccion,:telefono, presence: {message:"Obligatorio"} 
 	
