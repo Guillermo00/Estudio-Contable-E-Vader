@@ -52,7 +52,7 @@ class ClienteTest < ActiveSupport::TestCase
       cliente2 = Cliente.new ({nombre: 'Guillermo', apellido: 'Pose', nacimiento: Time.now, genero: 'M', dni: '13320',  cuil_cuit: '11540', telefono: '1234', email: 'pose.guille@gmail.com', direccion: 'calle 56' })
       assert cliente2.save
 
-      p cliente2.facturas.count
+     # p cliente2.facturas.count
       assert cliente2.destroy
    
       assert cliente2.destroyed?

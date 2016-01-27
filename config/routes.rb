@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :clientes do
    resources :facturas
    resources :personas
+   resources :medios
   end
 
   resources :facturas

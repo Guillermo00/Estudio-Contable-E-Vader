@@ -1,6 +1,7 @@
 class Cliente < ActiveRecord::Base
 	has_many :facturas, dependent: :restrict_with_error
 	
+	has_many :medios, dependent: :destroy
 	validates :nombre,:apellido,:dni,:cuil_cuit,:direccion,:telefono, presence: {message:"Obligatorio"} 
 	
 	validates :nombre,:apellido,:direccion, length: {minimum: 3, maximum: 15, :message => "Entre 2 y 15 caracteres"}

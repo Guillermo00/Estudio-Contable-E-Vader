@@ -6,6 +6,37 @@
 <fieldset class="nuevo">
 <%= render 'form' %>
 
+          <h2>Medios Adicionales</h2>
+              <% @cliente.medios.each do |medio| %>
+		    <p>
+		      <strong>Nombre:</strong>
+		      <%= medio.nombre %>
+		    </p>
+		   
+		    <p>
+		      <strong>Contacto:</strong>
+		      <%= medio.contacto %>
+		    </p> 
+			
+			<%= link_to 'Eliminar', [medio.cliente, medio],
+               method: :delete,
+               data: { confirm: '¿Esta seguro?' } %>
+		    <br>
+		  <% end %>
+         
+          <%= form_for([@cliente, @cliente.medios.build]) do |f| %>
+         
+            <%= f.label :Medio %>
+            <%= f.text_field :nombre %>
+         
+                    <%= f.label :contacto %>
+            <%= f.text_field :contacto %>
+          
+          <p>
+            <%= f.submit "Agregar Medio" %>
+          </p>
+        <% end %>
+
 </fieldset>
 
 

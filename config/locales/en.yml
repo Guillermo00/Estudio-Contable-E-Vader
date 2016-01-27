@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      cliente:
+        create: "Crear cliente"
+        update: "Actualizar"

@@ -50,6 +50,44 @@
     <strong>Direccion:</strong>
     <%= @cliente.direccion %>
   </p>
+
+  <h3>Medios Adicionales</h3>
+  
+ <% if @cliente.medios.any? %>
+      <% @cliente.medios.each do |medio| %>
+      <p>
+        <strong>Medio:</strong>
+        <%= medio.nombre %>
+      </p>
+     
+      <p>
+        <strong>Contacto:</strong>
+        <%= medio.contacto %>
+      </p>
+           <p style="color: grey" > <%= link_to 'Eliminar', [medio.cliente, medio],
+               method: :delete,
+               data: { confirm: '¿Esta seguro?' } %>
+          </p>
+      <br>
+    <% end %>
+  <% else %>
+          <p>
+            (El cliente no posee Medios Adicionales de comunicacion)
+        </p>
+  <% end%> 
+       <%= form_for([@cliente, @cliente.medios.build]) do |f| %>
+         
+           <i style="color: grey"> <%= f.label :Medio %></i>
+            <%= f.text_field :nombre %>
+         
+            <i style="color: grey"><%= f.label :contacto %></i>
+            <%= f.text_field :contacto %>
+          
+          <p>
+            <%= f.submit "Agregar Medio" %>
+          </p>
+        <% end %>
+
   <div>
     <h3>
       La edad del cliente es : <%= @cliente.edad %> 
